@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jamisondefaults}[2025/10/23 jamisondefault package]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{latexsym}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{amsmath}
+\RequirePackage{siunitx}
+\RequirePackage{float}
+\RequirePackage{graphicx} % Required for inserting images
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{listings, skins, breakable, minted}
+
+\RequirePackage{url}
+\RequirePackage{subcaption}
+\RequirePackage{comment}
+
+% Allows mathbb to be accessed easier
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% Overline limit (limsup-style)
+\newcommand{\limsupbar}{\mathop{\overline{\lim}}\nolimits}
+
+% Underline limit (liminf-style)
+\newcommand{\liminfbar}{\mathop{\underline{\lim}}\nolimits}
+
+% makes sums and limits always display-style
+\let\oldsumn\sum
+\renewcommand{\sum}{\displaystyle\oldsumn}
+\let\oldlim\lim
+\renewcommand{\lim}{\displaystyle\oldlim}
+
+% creates shortcut for absolute value with nice spacing
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+% Jupyter-like code boxes
+\newtcblisting{nbcode}{
+  listing only,
+  listing engine=minted,
+  minted language=python,
+  minted options={
+    fontsize=\small,
+    breaklines,
+    autogobble,
+    linenos,
+  },
+  colback=gray!5,
+  colframe=gray!40,
+  breakable,
+  enhanced,
+  left=6pt,
+  right=6pt,
+  top=4pt,
+  bottom=4pt,
+  boxsep=2pt,
+  boxrule=0.4pt,
+  arc=2pt,
+  borderline west={2pt}{0pt}{gray!70},
+}
+

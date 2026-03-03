@@ -6,3 +6,9 @@
 *.docx
 *.pdf
 *.png
+
+# latex adjacent files
+*.aux
+*.log
+*.out
+*.toc
